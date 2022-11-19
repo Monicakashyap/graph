@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+df=pd.read_csv('cars93.csv')
+
+import seaborn as sns
+sns.boxplot(df['Price'])
+plt.title('Box Plot')
+plt.show()
+
+print(np.min(df.Price))
+print(np.max(df.Price))
+print(np.std(df.Price))
+print(np.mean(df.Price))
+print(np.median(df.Price))
+
+x=df.mpg_city
+plt.hist(x,bins=5)
+plt.title('Histogram')
+plt.show()
+
+x=df.Horsepower
+y=df.mpg_city
+plt.scatter(x,y)
+plt.xlabel('Horsepower')
+plt.ylabel('milage')
+plt.title('Scatter plot')
+plt.show()
+
+e=df.enginesize
+u=df.Horsepower
+plt.plot(e,u)
+plt.xlabel('Enginesize')
+plt.ylabel('Line Graph')
+plt.show()
